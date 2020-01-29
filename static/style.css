@@ -1,0 +1,45 @@
+body{
+  margin:0;
+}
+html, body{
+  font-family:Verdana,sans-serif;
+  font-size:15px;
+  line-height:1.5;
+}
+
+.header{
+  margin: 0;
+  padding-left: 10px;
+  width: auto;
+  height: auto;
+  background-color: #FBEEC1;
+  position: static;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  }
+.button{
+  background-color: #f1f1f1;
+  color: black;
+}
+
+#map{
+  min-height: 650px;
+}
+
+#box{
+  position: absolute;
+  bottom: 100px;
+  right:1px;
+  height: 300px;
+  width: 280px;
+}
+
+.leaflet-interactive:hover{
+  weight: 1;
+  color: '#fff';
+  background-color: 'red';
+}

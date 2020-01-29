@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content%}
+
+<h1>_____THIS IS post_list.html</h1><a href="/">HOME</a>
+<ul>
+{% for post in posts %}
+  <li>{{post['talent_type']}} {{post['child_type']}} {{post['name']}} {{post['date']}} {{post['pt']}} {{post['t_0']}} {{post['t_1']}} {{post['pay_opt']}} {{post['description']}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form show</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>Form content</h1>
+  <ul>
+  {% for i in results %}
+    <li>{{i['Name']}} {{i['date']}} {{i['latitude']}} {{i['longitude']}}</li>
+  {% endfor %}
+  {{ results }}
+  <br>
+  {{ d }}
+
+
+  </ul>
+
+
+
+
+
+  <p></p>
+</body>
+</html>

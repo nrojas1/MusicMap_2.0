@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Project</h1>
+<form method= "post" id="form_holder" action="{{ url_for('db_project') }}">
+  What do you need?
+  <select id="tal_sel" name="talent_type" form="form_holder" required>
+    <option selected >----select----</option>
+    <option name="tal_type" value="Musician">Musician</option>
+    <option name="tal_type" value="VJ">VJ</option>
+    <option name="tal_type" value="Sound Engineer">Sound engineer</option>
+    <option name="tal_type" value="Photo/film">Photo/film</option>
+  </select><br>
+  Project name: <input type="text" name="name" value="Name" required><br>
+  Region: <input type="text" name="region" value="IDK IF THIS GON WORK" required><br>
+  End date: <input id="date" type="date" name="date" min="2020-01-01" required><br>
+  Pay?
+  <select class="" name="pay_opt" required>
+    <option selected >--select--</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+    <option value="maybe">Maybe</option>
+  </select><br>
+  Description: <textarea name="description" rows="3" cols="30" placeholder="" required></textarea><br>
+  <input type="email" name="email" value="" placeholder="example@mail.com" required><br>
+  <button onclick="post_project()">submit</button>
+</form>
+<a href="/">HOME</a>
+{% endblock %}

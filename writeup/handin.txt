@@ -1,0 +1,42 @@
+Geovis2, project de cours:
+
+J'ai crée un dashboard qui permet de visualiser des choses.
+L'utilisateur peut ajouter une chose sur la carte en indicant certaines choses.
+L'idée derière le dashboard est de mettre en relations des createurs des arts.
+Les choses montrés sont donc lié à la musique, au arts visuelles, jeux vidéos...
+
+1) chercher un projet:
+	on peut voir tous les projects en cours et leurs lieux + ce qu'ils demandent
+	Les demandes peuvent être filtré avec les outils mis à dispositions
+
+2) proposer un projet:
+	on peut ajouter une chose sur la carte en regardant la carte. 
+	On veut voire ou les choses se passe
+
+3) Mise en contact:
+	il faut trouver une moyen pour les utilisateurs, sans login, de communquer
+	genre une adresse mail qui fait les bails.
+	en mode: si tu vx contacter une personne t'envoy un mail a une adresse avec le subjet étant le code du projet.
+		la boite mail envoie un mail a la personne concerner par le projet et au sujet avec un message qui ouvre la discussion!
+≈≈≈≈≈≈≈
+The experience starts with two bottons: are you looking or offering?
+
+On the looking side, a window loads with the map of the markers. The events must be available in a list format. Maybe on the side panel.
+There must be controls (or clickables) that can be used to filter the markers by type as well as date and any other attribute added to the markers.
+When the user clicks on an event(be it on the map or the scrollable list): map zoom + description of event on page + other markers shade (but mouse hover brings colour back)
+Finally there is a contact button where there whole email concept comes into play...
+This page should be pleasant to watch as it is at the core of the concept. Users should want to look for events and be intregued by their locations.
+There could be a banner at the bottom giving some stats about the page...? -> attempt 1 for appeal
+
+On the offering side there is a map and a form. The idea is to have both pages have the same layout with different right-side panels. In this case there is a form where you fill up the projects information.
+This data is stored on a db once the button is clicked!!!! whooowhoooowhooowhoooo muferthuker. The layout is then refreshed and you are back to the looking side. Not much to do here besides maybe alert the personne and send them an email confirming their email adress.
+
+Thats pretty much it.
+
+≈≈≈≈≈≈≈
+There are a few things that suck about this app.
+The first is the requirements. As we are using spatial data for the points and other information, we need to utilize a database that supports such data and manipulation. So we need a the local server to be able to run pgadmin and it must contain a db with a table exclactly as used in the development stages of the app. This can be fixed with an online server but can it handle spatial? heroku, azure, etc.
+
+The db part of the app is manual. That is the issue. 
+
+

@@ -1,0 +1,13 @@
+<input id="startTime ".... onchange="validateStartEndTime()" />
+
+
+function validateStartEndTime(){
+  var t0 = $('#startTime').val();
+  var t1 = $('#endTime').val();
+
+  if (t0 >= t1) {
+    alert('Ça va pas la tête?');
+    $('#endTime').css('border', '4px solid #f00');
+    
+  }
+}

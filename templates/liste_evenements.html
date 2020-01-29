@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des cabanes</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>Liste des evenements</h1><a href="/">HOME</a>
+  <ul>
+  {% for event in evenements %}
+    <li>{{event['nom']}} {{event['x']}} {{event['y']}} {{event['pt']}}</li>
+  {% endfor %}
+  </ul>
+</body>
+</html>

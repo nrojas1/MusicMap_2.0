@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Talent-ting homepage</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="row"></div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <!-- href="/srch" -->
+        <a class="button" onclick="myFunction()">Make a post</a>
+        <a href="/listposts" class="button">Look at posts</a>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" id='about'></div>
+      <div id='typesrch' class="col-md-4"></div>
+      <div class="col-md-4"></div>
+    </div>
+    <script type="text/javascript">
+      function myFunction() {
+          var html = 'What for?<br>';
+          html += '<input type="radio" name="purp" value="concert" > Concert<br>';
+          html += '<input type="radio" name="purp" value="recording"> Recording<br>';
+          html += '<input type="radio" name="purp" value="event"> Event<br>';
+          html += '<input type="radio" name="purp" value="project"> Project<br>';
+          html += '<a id="purp_sel" href="">Submit</a>';
+
+          $('#typesrch').html(html);
+
+          $(document).ready(function() {
+            //add change listener to all inputs with name purp
+            $("[name='purp']").change(function() {
+              //get current radio button value
+              var ch = $(this).val();
+              var act = "";
+              var about = {
+                concert: 'A concert is somewhere are a time.',
+                recording: 'A recording is somewhere are a datetime',
+                event: 'An event is somewhere at some time',
+                project: 'A project is in a region within a given time'
+              }
+              var txt = "";
+
+              if (ch == "concert") act = "/concert";
+              if (ch == "recording") act = "/rec"; //set url
+              if (ch == "event") act = "/event";
+              if (ch == "project") act = "/project";
+
+              $("#purp_sel").attr("href", act);//set action url
+            });
+          });
+      };
+
+
+    </script>
+  </body>
+</html>

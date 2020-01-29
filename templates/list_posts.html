@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content%}
+
+  <h1>Posts:</h1><a id="redirect-home" href="/">HOME</a>
+  <ul>
+    {% for post in posts %}
+      {% if post['child_type'] is defined %}
+      <li>{{post['type'].capitalize()}} looking for a: {{post['talent_type']}} {{post['name']}} {{post['date']}} {{post['x']}} {{post['y']}} {{post['t_0']}} {{post['t_1']}} {{post['pay_opt']}} {{post['description']}}</li>
+      {% else %}
+      <li>{{post['type'].capitalize()}} looking for a: {{post['talent_type']}} {{post['child_type']}} {{post['name']}} {{post['date']}} {{post['x']}} {{post['y']}} {{post['t_0']}} {{post['t_1']}} {{post['pay_opt']}} {{post['description']}}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+{% endblock %}
